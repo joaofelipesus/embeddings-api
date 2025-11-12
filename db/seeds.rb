@@ -1,9 +1,7 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+GithubRepo.destroy_all
+
+GithubRepo.create!(name: 'Rails', url: 'https://github.com/rails/rails', description: 'Ruby on Rails web application framework', languages: %w[Ruby])
+GithubRepo.create!(name: 'Django', url: 'https://github.com/django/django', description: 'Python web framework for perfectionists with deadlines', languages: %w[Python])
+GithubRepo.create!(name: 'CakePHP', url: 'https://github.com/cakephp/cakephp', description: 'PHP rapid development framework', languages: %w[PHP])
+GithubRepo.create!(name: 'Hanami', url: 'https://github.com/hanami/hanami', description: 'Ruby web framework with a focus on object-oriented design', languages: %w[Ruby])
+GithubRepo.create!(name: 'Phoenix', url: 'https://github.com/phoenixframework/phoenix', description: 'Elixir web framework for building maintainable applications', languages: %w[Elixir])
