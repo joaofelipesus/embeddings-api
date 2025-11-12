@@ -20,10 +20,7 @@ namespace :github_repo do
 
   desc "Print on terminal the closest github repository"
   task :closest_repository, [:repository_name] => :environment do |task, args|
-    closest_repo = GithubRepo
-      .find_by_name(args[:repository_name])
-      .nearest_neighbors(:embedding, distance: "cosine")
-      .first
+    closest_repo = GithubRepo.find_by_name(args[:repository_name]).nearest_neighbors(:embedding, distance: "cosine").first
 
     puts closest_repo.name
   end
